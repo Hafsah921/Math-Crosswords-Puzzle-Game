@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Math Puzzle Game</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.svg" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="title">
+      <h1>Math Puzzle Game</h1>
+      <p class="subtitle">made by Every Ability Matters Group</p>
+    </div>
+    <div class="badges">
+      <span id="modeBadge" class="badge">—</span>
+      <span id="difficultyBadge" class="badge">—</span>
+      <span id="timer" class="timer">00:00</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Settings Panel -->
+    <section class="panel settings" id="settingsPanel">
+      <div class="row">
+        <label for="mode">Mode</label>
+        <div id="mode" class="segmented">
+          <button data-mode="+">+</button>
+          <button data-mode="-">−</button>
+          <button data-mode="*">×</button>
+          <button data-mode="/">÷</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="difficulty">Difficulty</label>
+        <div id="difficulty" class="segmented">
+          <button data-diff="easy" class="active">Easy</button>
+          <button data-diff="medium">Medium</button>
+          <button data-diff="hard">Hard</button>
+        </div>
+      </div>
+
+      <div class="row toggle">
+        <label class="switch">
+          <input type="checkbox" id="hintsToggle" />
+          <span class="slider"></span>
+        </label>
+        <span>Hints</span>
+      </div>
+
+      <div class="actions">
+        <button id="playBtn" class="primary">Play</button>
+      </div>
+    </section>
+
+    <!-- Game Panel -->
+    <section class="panel game" id="gamePanel" hidden>
+      <div class="board" id="board" aria-label="puzzle grid"></div>
+
+      <div class="controls">
+        <button id="hintBtn" class="ghost" hidden>Hint</button>
+        <div class="spacer"></div>
+        <button id="checkBtn" class="secondary">Check</button>
+        <button id="submitBtn" class="primary">Submit</button>
+        <button id="retryBtn" class="ghost">Retry</button>
+      </div>
+
+      <div class="bank" id="bank" aria-label="answer bank" role="list"></div>
+    </section>
+  </main>
+
+  <!-- Results Modal -->
+  <dialog id="resultsDialog">
+    <h3>Results</h3>
+    <div id="resultsBody"></div>
+    <div class="dialog-actions">
+      <button id="closeResults" class="primary">Play again</button>
+    </div>
+  </dialog>
+
+  <!-- IMPORTANT: load JS as a module -->
+  <script type="module" src="./js/main.js?v=20251028a"></script>
+
+</body>
+</html>
